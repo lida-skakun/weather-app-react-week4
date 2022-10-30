@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
+Container {
+  margin: 5%;
+  width: 50%;
+  font-family: "Poppins", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.searchCity,
+#locationButton {
+  border: 1.5px solid #42a5f5;
+  color: #5a6275;
+  padding: 5px;
+  width: 100%;
+  border-radius: 0.2em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.searchForm {
+  margin-bottom: 5%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.searchForm button {
+  width: 10%;
+  background: #d9edfd;
+  border: 1.5px solid #42a5f5;
 }
 
-.App-link {
-  color: #61dafb;
+.searchForm button:hover,
+#locationButton:hover {
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#locationButton {
+  background: #d9edfd;
+  padding: 6px;
+}
+
+.todayWeather {
+  margin-left: 6%;
+}
+
+h1,
+#mainUnit {
+  color: #42a5f5;
+  font-size: 3.5em;
+  font-weight: 600;
+  margin: 0;
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+  color: #42a5f5;
+}
+
+#dateTime,
+#location {
+  font-weight: 600;
+  letter-spacing: 3.2px;
+  text-transform: capitalize;
+}
+
+#description {
+  font-size: 12px;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.weatherIcon {
+  width: 50%;
+  margin: 0 auto;
+}
+
+#weekForecast {
+  border: 1.5px solid #42a5f5;
+  font-weight: 800;
+  border-radius: 0.2em;
+  padding: 5px;
+}
+
+.dayForecast {
+  margin-top: 3%;
+  margin-bottom: 2%;
+}
+
+.nightTemperature {
+  font-weight: 300;
+}
+
+.fotter {
+  font-size: 12px;
 }

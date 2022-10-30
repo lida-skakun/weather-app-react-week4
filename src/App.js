@@ -1,10 +1,10 @@
-import "./App.css";
-import Card from "./Card";
+import React from "react";
+import Weather from "./Weather";
 
 function App() {
   return (
     <div className="App">
-      <Card />
+      <Weather />
     </div>
   );
 }

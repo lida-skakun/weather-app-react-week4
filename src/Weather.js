@@ -1,12 +1,19 @@
 import React from "react";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
 
-export default function Card() {
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+
+export default function Weather() {
   return (
-    <div className="container">
-      <div className="card">
-        <div className="card-body">
-          <div className="row">
-            <div className="col-9">
+    <Container>
+      <Card>
+        <Card.Body>
+          <Row>
+            <Col xs={9}>
               <form className="searchForm input-group mb-3">
                 <input
                   type="search"
@@ -24,41 +31,40 @@ export default function Card() {
                   />
                 </button>
               </form>
-            </div>
-            <div className="col-3">
+            </Col>
+            <Col xs={3}>
               <button id="locationButton">My Location</button>
-            </div>
-          </div>
-          {/*
-          <div className="row">
-            <div className="col-5 todayWeather">
-          <h1>28</h1>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={5} className="todayWeather">
+              <h1>28</h1>
               <span id="mainUnit">ºC</span>
               <div id="location">New York</div>
               <div id="dateTime"></div>
               <p id="description">Cloudy with clearning</p>
-           <img
+              <img
                 src="images/weather1.png"
                 className="weatherIcon"
-                alt="weather-image"
+                alt="weather icon"
                 id="weatherIcon"
-              /> 
-               </div>
+              />
+            </Col>
 
-            <div id="weekForecast" className="col-6"></div>
-          </div>*/}
-        </div>
-      </div>
+            <Col xs={6} id="weekForecast"></Col>
+          </Row>
+        </Card.Body>
+      </Card>
       <p className="fotter">
         <a
           href="https://github.com/lida-skakun/SheCodes-Weather-App"
+          rel="noopener noreferrer"
           target="_blank"
-          rel="noreffer"
         >
           Open-source code
         </a>
         by Lida Tkachova
       </p>
-    </div>
+    </Container>
   );
 }
