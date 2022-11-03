@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./App.css";
 
 function App() {
   let [city, setCity] = useState(null);
@@ -52,17 +53,35 @@ function App() {
       </li>
     </ul>
   );
+
+  let creatorInfo = (
+    <p className="author">
+      Made by Lida Tkachova and it is{" "}
+      <a
+        href="https://github.com/lida-skakun/weather-app-react-week4"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {" "}
+        open-sourced on GitHub
+      </a>
+    </p>
+  );
   if (loaded) {
     return (
       <div>
         {form}
         <h4>Current weather in {city} :</h4>
-
         {currentWeater}
+        {creatorInfo}
       </div>
     );
   } else {
-    return form;
+    return (
+      <div>
+        {form} {creatorInfo}{" "}
+      </div>
+    );
   }
 }
 
