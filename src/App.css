@@ -1,4 +1,43 @@
-.author {
-  font-size: 12px;
-  margin-top: 25px;
+:root {
+  --parameters-text: #a3a0a1;
+}
+
+.App {
+  background: #f2f2f4;
+  padding: 20px 10px;
+  border-radius: 25px;
+  max-width: 500px;
+  margin-top: 20px;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+.parameters {
+  color: var(--parameters-text);
+  font-size: 14px;
+}
+
+.App ul {
+  list-style: none;
+  padding: 0;
+}
+
+.weather-icon {
+  width: 50px;
+}
+
+.temperature {
+  font-weight: 700;
+  font-size: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 10px;
+}
+
+.desription {
+  font-size: 16px;
+  color: var(--parameters-text);
 }

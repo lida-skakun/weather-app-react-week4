@@ -1,88 +1,45 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
 import "./App.css";
 
 function App() {
-  let [city, setCity] = useState(null);
-  let [loaded, setLoaded] = useState(false);
-  let [weather, setWeather] = useState({});
-
-  function showWeather(response) {
-    setLoaded(true);
-    setWeather({
-      temperature: response.data.main.temp,
-      wind: response.data.wind.speed,
-      humidity: response.data.main.humidity,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
-      description: response.data.weather[0].description,
-    });
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=93791ed1c5ac3002a2880b95c37460d5&units=metric`;
-    axios.get(apiUrl).then(showWeather);
-  }
-
-  function enteringCity(event) {
-    setCity(event.target.value);
-  }
-
-  let form = (
-    <div className="App">
-      <h3>Search for weater in your city</h3>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="search"
-          placeholder="Enter a city..."
-          onChange={enteringCity}
-        />
-        <input type="submit" value="Search" />
-      </form>
+  return (
+    <div className="App container-fluid">
+      <div className="row">
+        <div className="col-6">
+          <h3>
+            <strong>New York</strong>, USA
+          </h3>
+          <p className="parameters">Monday, 22:09</p>
+          <ul>
+            <li>
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/1779/1779940.png"
+                alt="weather-icon"
+                className="weather-icon"
+              />
+            </li>
+            <li className="temperature">
+              25° <p className="description">Stormy</p>
+            </li>
+            <li className="desription">Stormy</li>
+            <li>
+              <span>Stormy</span>
+              <p>Wind</p>
+            </li>
+            <li>
+              <p>Wind</p>
+              <p>Wind</p>
+            </li>
+          </ul>
+        </div>
+        <div className="col-6">
+          <form>
+            <input type="serach" placeholder="Type a city..." />
+          </form>
+        </div>
+      </div>
     </div>
   );
-
-  let currentWeater = (
-    <ul>
-      <li>Temperature: {Math.round(weather.temperature)}°C</li>
-      <li>Description: {weather.description}</li>
-      <li>Humidity: {weather.humidity}%</li>
-      <li>Wind: {weather.wind}km/h</li>
-      <li>
-        <img src={weather.icon} alt={weather.description} />
-      </li>
-    </ul>
-  );
-
-  let creatorInfo = (
-    <p className="author">
-      Made by Lida Tkachova and it is{" "}
-      <a
-        href="https://github.com/lida-skakun/weather-app-react-week4"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {" "}
-        open-sourced on GitHub
-      </a>
-    </p>
-  );
-  if (loaded) {
-    return (
-      <div>
-        {form}
-        <h4>Current weather in {city} :</h4>
-        {currentWeater}
-        {creatorInfo}
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        {form} {creatorInfo}{" "}
-      </div>
-    );
-  }
 }
 
 export default App;
