@@ -3,20 +3,20 @@
 }
 
 .App {
+  font-family: arial, sans-serif;
   background: #f2f2f4;
   padding: 20px 10px;
   border-radius: 25px;
-  max-width: 500px;
+  max-width: 600px;
   margin-top: 20px;
   text-align: center;
-  font-family: "Times New Roman", Times, serif;
 }
 
-h3 {
+.Ahh h3 {
   font-size: 16px;
 }
 
-.parameters {
+App .parameters {
   color: var(--parameters-text);
   font-size: 14px;
 }
@@ -26,18 +26,29 @@ h3 {
   padding: 0;
 }
 
-.weather-icon {
+.App .weather-icon {
   width: 50px;
 }
 
-.temperature {
+.App .temperature {
   font-weight: 700;
   font-size: 70px;
-  font-family: Arial, Helvetica, sans-serif;
   padding-left: 10px;
+  margin-top: 5px;
+  line-height: 1;
 }
 
-.desription {
+.App .desription {
   font-size: 16px;
   color: var(--parameters-text);
+}
+
+.search-button:hover {
+  cursor: pointer;
+}
+
+.additional-conditions {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 100px;
 }
