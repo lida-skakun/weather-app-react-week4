@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Description from "./Description";
+import axios from "axios";
 
 import "./App.css";
 
 function App() {
+  const [weatherData, setWeatherData] = useState({ ready: false });
+  let [city, setCity] = useState("London");
+
+  const key = `93791ed1c5ac3002a2880b95c37460d5`;
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q={city}&appid={key}&units={metric}`;
+
   return (
     <div className="App container-fluid">
       <div className="input-group mb-3">
