@@ -8,7 +8,9 @@ export default function Description(props) {
       <div className="col-7 text-start p-0">
         <p className="parameters">{props.parametr}</p>
         <p>
-          <strong>{props.value}</strong>
+          <strong>
+            {props.value} {props.units}
+          </strong>
         </p>
       </div>
     </div>
