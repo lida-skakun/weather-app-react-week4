@@ -2,6 +2,7 @@ import React from "react";
 import Description from "./Description";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
+import UnitConvertation from "./UnitConvertation";
 
 import "./CurrentWeather.css";
 
@@ -19,7 +20,7 @@ export default function CurrentWeather(props) {
           <li>
             <WeatherIcon iconCode={props.data.icon} />
           </li>
-          <li className="temperature">{Math.round(props.data.temperature)}°</li>
+          <UnitConvertation celcius={props.data.temperature} />
           <li className="parameters text-capitalize">
             {props.data.description}
           </li>

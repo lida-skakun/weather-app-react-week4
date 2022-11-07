@@ -20,6 +20,16 @@
   line-height: 1;
 }
 
+.CurrentWeather .unit {
+  font-size: 16px;
+  vertical-align: top;
+  line-height: 1.8;
+}
+
+.CurrentWeather a {
+  text-decoration: none;
+  color: black;
+}
 .CurrentWeather .desription {
   font-size: 16px;
   color: var(--parameters-text);
