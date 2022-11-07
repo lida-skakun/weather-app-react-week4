@@ -1,10 +1,13 @@
 import React from "react";
 import Description from "./Description";
 import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
+
+import "./CurrentWeather.css";
 
 export default function CurrentWeather(props) {
   return (
-    <div className="row">
+    <div className="CurrentWeather row">
       <div className="col-5">
         <h3>
           <strong>{props.data.city}</strong>, {props.data.country}
@@ -14,11 +17,7 @@ export default function CurrentWeather(props) {
         </p>
         <ul>
           <li>
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/1779/1779940.png"
-              alt={props.data.description}
-              className="weather-icon"
-            />
+            <WeatherIcon />
           </li>
           <li className="temperature">{Math.round(props.data.temperature)}°</li>
           <li className="parameters text-capitalize">
