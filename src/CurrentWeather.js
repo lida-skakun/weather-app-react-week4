@@ -17,7 +17,7 @@ export default function CurrentWeather(props) {
         </p>
         <ul>
           <li>
-            <WeatherIcon />
+            <WeatherIcon iconCode={props.data.icon} />
           </li>
           <li className="temperature">{Math.round(props.data.temperature)}°</li>
           <li className="parameters text-capitalize">
