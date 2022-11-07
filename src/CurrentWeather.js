@@ -13,9 +13,9 @@ export default function CurrentWeather(props) {
         <h3>
           <strong>{props.data.city}</strong>, {props.data.country}
         </h3>
-        <p className="parameters">
+        <div className="parameters">
           <FormattedDate date={props.data.date} />
-        </p>
+        </div>
         <ul>
           <li>
             <WeatherIcon iconCode={props.data.icon} />

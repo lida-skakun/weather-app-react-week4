@@ -51,7 +51,12 @@ export default function Weather() {
             aria-describedby="basic-addon2"
             onChange={handleCityChange}
           />
-          <span className="input-group-text search-button" id="basic-addon2">
+          <span
+            className="input-group-text search-button"
+            id="basic-addon2"
+            role="img"
+            aria-label="search"
+          >
             🔎
           </span>
         </form>
