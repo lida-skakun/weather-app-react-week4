@@ -10,7 +10,16 @@ export default function App() {
         <Weather />
       </div>
 
-      <footer> Created by Lida Tkachova</footer>
+      <footer className="container-fluid">
+        {" "}
+        This project was coded by Lida Tkachova and is{" "}
+        <a
+          href="https://github.com/lida-skakun/weather-app-react-week4"
+          target="a_blank"
+        >
+          open-sourced on GitHub
+        </a>
+      </footer>
     </div>
   );
 }
