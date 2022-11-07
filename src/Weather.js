@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Description from "./Description";
-import FormattedDate from "./FormattedDate";
+import CurrentWeather from "./CurrentWeather";
 
 import "./Weather.css";
 
@@ -26,78 +25,42 @@ export default function Weather() {
     });
   }
 
+  function search() {
+    const key = `93791ed1c5ac3002a2880b95c37460d5`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
+
+    axios.get(apiUrl).then(showWeather);
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <div className="input-group mb-3">
+        <form className="input-group mb-3" onSubmit={handleSubmit}>
           <input
             type="search"
             className="form-control"
             placeholder="Type a city..."
             aria-describedby="basic-addon2"
+            onChange={handleCityChange}
           />
           <span className="input-group-text search-button" id="basic-addon2">
             🔎
           </span>
-        </div>
-        <div className="row">
-          <div className="col-5">
-            <h3>
-              <strong>{weatherData.city}</strong>, {weatherData.country}
-            </h3>
-            <p className="parameters">
-              <FormattedDate date={weatherData.date} />
-            </p>
-            <ul>
-              <li>
-                <img
-                  src="https://cdn-icons-png.flaticon.com/512/1779/1779940.png"
-                  alt={weatherData.description}
-                  className="weather-icon"
-                />
-              </li>
-              <li className="temperature">
-                {Math.round(weatherData.temperature)}°
-              </li>
-              <li className="parameters text-capitalize">
-                {weatherData.description}
-              </li>
-            </ul>
-          </div>
-          <div className="col-7 additional-conditions">
-            <Description
-              parametr="Temperature"
-              icon="⫰"
-              value={weatherData.temperature}
-              units="°C"
-            />
-            <Description
-              parametr="Feels like"
-              icon="⨀"
-              value={Math.round(weatherData.feelslike)}
-              units="°C"
-            />
-            <Description
-              parametr="Wind"
-              icon="⩬"
-              value={weatherData.wind}
-              units="km/h"
-            />
-            <Description
-              parametr="Humidity"
-              icon="⩫"
-              value={weatherData.humidity}
-              units="%"
-            />
-          </div>
-        </div>
+        </form>
+        <CurrentWeather data={weatherData} />
       </div>
     );
   } else {
-    const key = `93791ed1c5ac3002a2880b95c37460d5`;
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
-
-    axios.get(apiUrl).then(showWeather);
+    search();
 
     return "Loading...";
   }
