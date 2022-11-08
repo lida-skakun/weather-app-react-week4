@@ -3,13 +3,14 @@ import Description from "./Description";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 import UnitConvertation from "./UnitConvertation";
+import WeatherForecast from "./WeatherForecast";
 
 import "./CurrentWeather.css";
 
 export default function CurrentWeather(props) {
   return (
     <div className="CurrentWeather row">
-      <div className="col-5">
+      <div className="col-6">
         <h3>
           <strong>{props.data.city}</strong>, {props.data.country}
         </h3>
@@ -25,32 +26,40 @@ export default function CurrentWeather(props) {
             {props.data.description}
           </li>
         </ul>
+        <div className="additional-conditions">
+          <Description
+            parametr="Temperature"
+            icon="⫰"
+            value={Math.round(props.data.temperature)}
+            units="°C"
+          />
+          <Description
+            parametr="Feels like"
+            icon="⨀"
+            value={Math.round(props.data.feelslike)}
+            units="°C"
+          />
+          <Description
+            parametr="Wind"
+            icon="⩬"
+            value={Math.round(props.data.wind)}
+            units="km/h"
+          />
+          <Description
+            parametr="Humidity"
+            icon="⩫"
+            value={props.data.humidity}
+            units="%"
+          />
+        </div>
       </div>
-      <div className="col-7 additional-conditions">
-        <Description
-          parametr="Temperature"
-          icon="⫰"
-          value={Math.round(props.data.temperature)}
-          units="°C"
-        />
-        <Description
-          parametr="Feels like"
-          icon="⨀"
-          value={Math.round(props.data.feelslike)}
-          units="°C"
-        />
-        <Description
-          parametr="Wind"
-          icon="⩬"
-          value={Math.round(props.data.wind)}
-          units="km/h"
-        />
-        <Description
-          parametr="Humidity"
-          icon="⩫"
-          value={props.data.humidity}
-          units="%"
-        />
+      <div className="col-6">
+        <WeatherForecast />
+        <WeatherForecast />
+        <WeatherForecast />
+        <WeatherForecast />
+        <WeatherForecast />
+        <WeatherForecast />
       </div>
     </div>
   );
