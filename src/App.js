@@ -19,6 +19,10 @@ export default function App() {
         >
           open-sourced on GitHub
         </a>
+        and{" "}
+        <a href="https://lucky-tartufo-017c35.netlify.app/" target="a_blank">
+          hosted on Netlify
+        </a>
       </footer>
     </div>
   );
