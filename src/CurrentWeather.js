@@ -54,12 +54,7 @@ export default function CurrentWeather(props) {
         </div>
       </div>
       <div className="col-6">
-        <WeatherForecast />
-        <WeatherForecast />
-        <WeatherForecast />
-        <WeatherForecast />
-        <WeatherForecast />
-        <WeatherForecast />
+        <WeatherForecast coordinates={props.data.coordinates} />
       </div>
     </div>
   );
