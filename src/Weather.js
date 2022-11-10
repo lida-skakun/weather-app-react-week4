@@ -9,7 +9,6 @@ export default function Weather() {
   let [weatherData, setWeatherData] = useState({});
 
   function showWeather(response) {
-    console.log(response.data);
     setWeatherData({
       ready: true,
       coordinates: response.data.coord,

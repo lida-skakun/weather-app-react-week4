@@ -7,8 +7,8 @@ export default function WeatherForecast(props) {
     console.log(response.data);
   }
 
-  const key = `aa09763d916df0424c840d55bfc2d2c9`;
-  const apiUrl = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=51.5&lon=-0.12&cnt=6&appid=${key}`;
+  const key = `d7a0b2da68b9be514398e1c1689a1208`;
+  const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${props.coordinates.lat}&lon=${props.coordinates.lon}&cnt=6&appid=${key}`;
   axios.get(apiUrl).then(showForecast);
 
   return (
