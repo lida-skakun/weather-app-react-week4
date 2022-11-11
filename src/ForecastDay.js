@@ -20,13 +20,13 @@ export default function ForecastDay(props) {
 
   return (
     <div className="ForecastDay row">
-      <div className="col-6">{dayOfWeek()}</div>
-      <div className="col-3">
+      <div className="col-5 lh-lg p-0">{dayOfWeek()}</div>
+      <div className="col-3 lh-lg">
         <strong>{temperature}℃</strong>
       </div>
       <div className="col-3">
         {" "}
-        <WeatherIcon iconCode={props.data[0].weather[0].icon} size={30} />
+        <WeatherIcon iconCode={props.data[0].weather[0].icon} />
       </div>
     </div>
   );

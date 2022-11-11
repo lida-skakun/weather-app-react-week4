@@ -15,7 +15,16 @@ export default function WeatherForecast(props) {
   }
 
   if (ready) {
-    return <ForecastDay data={forecast} />;
+    return (
+      <div className="WeatherForecast">
+        <ForecastDay data={forecast} />
+        <ForecastDay data={forecast} />
+        <ForecastDay data={forecast} />
+        <ForecastDay data={forecast} />
+        <ForecastDay data={forecast} />
+        <ForecastDay data={forecast} />
+      </div>
+    );
   } else {
     const key = `96ad27349a64ea1dcdfbe6f4d458c085`;
     const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${props.coordinates.lat}&lon=${props.coordinates.lon}&cnt=6&appid=${key}&units=metric`;

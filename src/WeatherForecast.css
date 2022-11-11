@@ -1,5 +1,9 @@
-.WeatherForecast {
-  border: 1px solid #ffffff;
+.ForecastDay {
+  border: 2px solid #ffffff;
   border-radius: 30px;
-  margin-bottom: 5px;
+  margin: 0 10px 15px 0 !important;
+}
+
+.ForecastDay canvas {
+  width: 30px;
 }
