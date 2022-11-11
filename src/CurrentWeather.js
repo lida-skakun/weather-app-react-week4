@@ -19,7 +19,7 @@ export default function CurrentWeather(props) {
         </div>
         <ul>
           <li>
-            <WeatherIcon iconCode={props.data.icon} />
+            <WeatherIcon iconCode={props.data.icon} size={60} />
           </li>
           <UnitConvertation celcius={props.data.temperature} />
           <li className="parameters text-capitalize">
