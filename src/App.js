@@ -9,7 +9,6 @@ export default function App() {
       <div className="main container-fluid">
         <Weather />
       </div>
-
       <footer className="container-fluid">
         {" "}
         This project was coded by Lida Tkachova and is{" "}

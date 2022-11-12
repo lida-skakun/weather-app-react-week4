@@ -64,7 +64,6 @@ export default function Weather() {
     );
   } else {
     search();
-
     return "Loading...";
   }
 }
