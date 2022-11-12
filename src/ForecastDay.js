@@ -2,7 +2,7 @@ import React from "react";
 import WeatherIcon from "./WeatherIcon";
 
 export default function ForecastDay(props) {
-  let temperature = Math.round(props.data[0].temp.max);
+  let temperature = Math.round(props.data.temp.max);
   function dayOfWeek() {
     let days = [
       "Sunday",
@@ -13,7 +13,7 @@ export default function ForecastDay(props) {
       "Friday",
       "Saturday",
     ];
-    let day = new Date(props.data[0].dt * 1000);
+    let day = new Date(props.data.dt * 1000);
     day = days[day.getDay()];
     return day;
   }
@@ -26,7 +26,7 @@ export default function ForecastDay(props) {
       </div>
       <div className="col-3">
         {" "}
-        <WeatherIcon iconCode={props.data[0].weather[0].icon} />
+        <WeatherIcon iconCode={props.data.weather[0].icon} />
       </div>
     </div>
   );
